@@ -1,0 +1,70 @@
+
+<div class="container" data-controller="dashboard">
+    <div class="card border-0 shadow mt-5">
+        <div class="card-body p-4">
+            <h1 class="text-center fw-bold">Random Password Generator</h1>
+            <p class="text-center text-secondary">Create strong and secure passwords to keep your account safe online.</p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-lg-5 mb-5">
+                    <%= image_tag 'image.svg', class: 'img-fluid' %>
+                </div>
+                <div class="col-12 col-lg-7 pt-4">
+                    <div class="row">
+                        <div class="col-12 mb-5">
+                             <div class="d-flex flex-nowrap">
+                                <input type="text" class="form-control form-control-lg" id="password">
+                                <button class="btn btn-lg btn-light ms-3" data-action="click->dashboard#generate"><%= image_tag 'loop.png' %></button>
+                                <button class="btn btn-lg btn-light ms-3" data-action="click->dashboard#copy"><%= image_tag 'copy.png' %></button>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mb-5">
+                            <div class="row">
+                                <div class="col-12 col-md-auto d-flex flex-nowrap">
+                                    <p class="fs-5 m-0 me-3">Example range:</p> <p class="fs-5 m-0" id="range"></p>
+                                </div>
+                                <div class="col-12 col-md-6 pt-1">
+                                    <input type="range" class="form-range" id="inputRange" min="1" max="50" data-action="change->dashboard#generate">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <p class="fs-5 m-0 me-3">Characters used:</p>
+                                </div>
+                                <div class="col-12 col-md-2 pt-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="text" checked data-action="change->dashboard#generate">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            ABC
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-2 pt-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="number" checked data-action="change->dashboard#generate">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            123
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-2 pt-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="specials" checked data-action="change->dashboard#generate">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            #&$
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
