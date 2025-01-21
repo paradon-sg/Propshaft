@@ -8,10 +8,6 @@ export default class extends Controller {
 
   copy() {
     navigator.clipboard.writeText(password.value);
-    window.setTimeout(() => {
-      alert("Error Found ");
-      window.close();
-    }, 10);
   }
 
   generate(e) {
